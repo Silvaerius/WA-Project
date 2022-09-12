@@ -3,3 +3,168 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+.header {
+    width: auto;
+    height: 85px;
+    background-color: #3B95D7;
+}
+
+.heading-primary {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    padding: 15px;
+}
+
+.features {
+    display: flex;
+
+    margin-top: 5px;
+}
+
+.main-feature {
+    flex: 1;
+}
+
+.members-sidebar {
+    width: 401px;
+    height: 934px;
+    background-color: rgba(59, 149, 215, 0.15);
+
+    margin-right: 12px;
+}
+
+.action-container {
+    background-color: #D9D9D9;
+    padding: 20px 35px;
+}
+
+.form-header {
+    border-bottom: 1px solid #000000;
+}
+
+.form-header > h2 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #3B95D7;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.form-input-container {
+    margin-right: 20px;
+}
+
+.form-input-container label,
+.form-input-container input {
+    display: block;
+}
+
+.form-input-container > input,
+.form-input-container > select {
+    font-size: 20px;
+    height: 32px;
+    border: 0;
+    padding: 5px;
+}
+
+.smaller-input-width {
+    width: 115px;
+}
+
+.medium-input-width {
+    width: 200px;
+}
+
+.bigger-input-width {
+    width: 380px;
+}
+
+label,
+legend {
+    font-weight: 600;
+    font-size: 14px;
+    color: #666363;
+    letter-spacing: 0.1em;
+}
+
+fieldset label {
+    color: #3B95D7;
+}
+
+.legacy-radio-fieldset {
+    position: relative;
+    border: 0;
+    background-color: white;
+    padding: 5px 10px;
+    height: 32px;
+    margin-top: 32px;
+}
+
+.legacy-radio-fieldset > legend {
+    position: absolute;
+    top: -21px;
+}
+
+.radio-label {
+    position: relative;
+    top: -1.5px;
+
+    margin-left: 9px;
+    margin-right: 75px;
+}
+
+.radio-label:last-child {
+    margin-right: 0;
+}
+
+.legacy-checkbox-fieldset {
+    width: 688px;
+    height: 110px;
+
+    position: relative;
+
+    border: 1px solid #3B95D7;
+    border-radius: 15px;
+}
+
+.legacy-checkbox-fieldset > label {
+    margin-top: 36px;
+}
+
+.footer {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    .action-container {
+        margin-bottom: 15px;
+    }
+
+    .action-container:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+}

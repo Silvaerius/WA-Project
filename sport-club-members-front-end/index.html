@@ -3,8 +3,9 @@
 
 <head>
     <meta charset='UTF-8' />
-    <title>Printarea 3D</title>
+    <title>Sport Club</title>
     <link rel='stylesheet' href='style.css' />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
 <body>
@@ -18,92 +19,106 @@
         </div>
         <div class="main-feature">
             <div class="actions-panel">
-                <div class="add-member-container">
-                    <form class="member-data-add-form">
+                <div class="action-container">
+                    <header class="form-header">
+                        <h2>Add new member</h2>
+                    </header>
+                    <form class="member-action-form">
                         <div class="form-row">
-                            <label for='first-name'>First name</label>
-                            <input id='first-name' name='first-name' type='text'/>
-
-                            <label for='last-name'>Last name</label>
-                            <input id='last-name' name='last-name' type='text'/>
+                            <div class="form-input-container">
+                                <label for='add-first-name'>First name</label>
+                                <input id='add-first-name' name='first-name' type='text' class="medium-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='add-last-name'>Last name</label>
+                                <input id='add-last-name' name='last-name' type='text' class="medium-input-width"/>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for='address'>Address</label>
-                            <input id='address' name='address' type='text'/>
-
-                            <label for='zip-code'>Zip code</label>
-                            <input id='zip-code' name='zip-code' type='text'/>
-
-                            <label for='city'>City</label>
-                            <input id='city' name='city' type='text'/>
-
-                            <label for='country'>Country</label>
-                            <input id='country' name='country' type='text'/>
+                            <div class="form-input-container">
+                                <label for='add-address'>Address</label>
+                                <input id='add-address' name='address' type='text' class="bigger-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='add-zip-code'>Zip code</label>
+                                <input id='add-zip-code' name='zip-code' type='text' class="smaller-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='add-city'>City</label>
+                                <input id='add-city' name='city' type='text' class="medium-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='add-country'>Country</label>
+                                <input id='add-country' name='country' type='text' class="medium-input-width"/>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for='gender'>Gender</label>
-                            <select id='gender' name='gender'>
-                                <option value='female'>female</option>
-                                <option value='male'>male</option>
-                                <option value='not-spec'>not specified</option>
-                            </select>
-
-                            <label for='age'>Age</label>
-                            <input id='age' name='age' type='text'/>
+                            <div class="form-input-container">
+                                <label for='add-gender'>Gender</label>
+                                <select id='add-gender' name='gender' class="medium-input-width">
+                                    <option value='female'>female</option>
+                                    <option value='male'>male</option>
+                                    <option value='not-spec'>not specified</option>
+                                </select>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='add-age'>Age</label>
+                                <input id='add-age' name='age' type='text' class="smaller-input-width"/>
+                            </div>
 
                             <fieldset class="legacy-radio-fieldset">
                                 <legend>Activity class</legend>
-                                <input id='activity-class-type-1'
+                                <input id='add-activity-class-type-1'
                                        name='activity-class'
                                        type='radio'
                                        value='professional'
                                        checked />
-                                <label for='activity-class-type-1' class='radio-label'>professional</label>
+                                <label for='add-activity-class-type-1' class='radio-label'>professional</label>
 
-                                <input id='activity-class-type-2'
+                                <input id='add-activity-class-type-2'
                                        name='activity-class'
                                        type='radio'
                                        value='amateur' />
-                                <label for='activity-class-type-2' class='radio-label'>amateur</label>
+                                <label for='add-activity-class-type-2' class='radio-label'>amateur</label>
                             </fieldset>
                         </div>
                         <div class="form-row">
                             <fieldset class="legacy-checkbox-fieldset">
                                 <legend>Practied sports</legend>
-                                <label class='checkbox-label' for='running'>
-                                    <input id='running'
+                                <label for='add-running'>
+                                    <input id='add-running'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='running'/>
                                     <span>running</span>
                                 </label>
 
-                                <label class='checkbox-label' for='cycling'>
-                                    <input id='cycling'
+                                <label for='add-cycling'>
+                                    <input id='add-cycling'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='cycling'/>
                                     <span>cycling</span>
                                 </label>
 
-                                <label class='checkbox-label' for='swimming'>
-                                    <input id='swimming'
+                                <label for='add-swimming'>
+                                    <input id='add-swimming'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='swimming'/>
                                     <span>swimming</span>
                                 </label>
 
-                                <label class='checkbox-label' for='walking'>
-                                    <input id='walking'
+                                <label for='add-walking'>
+                                    <input id='add-walking'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='walking'/>
                                     <span>walking</span>
                                 </label>
 
-                                <label class='checkbox-label' for='skiing'>
-                                    <input id='skiing'
+                                <label for='add-skiing'>
+                                    <input id='add-skiing'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='skiing'/>
@@ -114,92 +129,106 @@
                         <button>Save</button>
                     </form>
                 </div>
-                <div class="edit-member-container">
-                    <form class="member-data-edit-form">
+                <div class="action-container">
+                    <header class="form-header">
+                        <h2>Edit member</h2>
+                    </header>
+                    <form class="member-action-form">
                         <div class="form-row">
-                            <label for='first-name'>First name</label>
-                            <input id='first-name' name='first-name' type='text'/>
-
-                            <label for='last-name'>Last name</label>
-                            <input id='last-name' name='last-name' type='text'/>
+                            <div class="form-input-container">
+                                <label for='edit-first-name'>First name</label>
+                                <input id='edit-first-name' name='first-name' type='text' class="medium-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='edit-last-name'>Last name</label>
+                                <input id='edit-last-name' name='last-name' type='text' class="medium-input-width"/>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for='address'>Address</label>
-                            <input id='address' name='address' type='text'/>
-
-                            <label for='zip-code'>Zip code</label>
-                            <input id='zip-code' name='zip-code' type='text'/>
-
-                            <label for='city'>City</label>
-                            <input id='city' name='city' type='text'/>
-
-                            <label for='country'>Country</label>
-                            <input id='country' name='country' type='text'/>
+                            <div class="form-input-container">
+                                <label for='edit-address'>Address</label>
+                                <input id='edit-address' name='address' type='text' class="bigger-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='edit-zip-code'>Zip code</label>
+                                <input id='edit-zip-code' name='zip-code' type='text' class="smaller-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='edit-city'>City</label>
+                                <input id='edit-city' name='city' type='text' class="medium-input-width"/>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='edit-country'>Country</label>
+                                <input id='edit-country' name='country' type='text' class="medium-input-width"/>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for='gender'>Gender</label>
-                            <select id='gender' name='gender'>
-                                <option value='female'>female</option>
-                                <option value='male'>male</option>
-                                <option value='not-spec'>not specified</option>
-                            </select>
-
-                            <label for='age'>Age</label>
-                            <input id='age' name='age' type='text'/>
+                            <div class="form-input-container">
+                                <label for='edit-gender'>Gender</label>
+                                <select id='edit-gender' name='gender' class="medium-input-width">
+                                    <option value='female'>female</option>
+                                    <option value='male'>male</option>
+                                    <option value='not-spec'>not specified</option>
+                                </select>
+                            </div>
+                            <div class="form-input-container">
+                                <label for='edit-age'>Age</label>
+                                <input id='edit-age' name='age' type='text' class="smaller-input-width"/>
+                            </div>
 
                             <fieldset class="legacy-radio-fieldset">
                                 <legend>Activity class</legend>
-                                <input id='activity-class-type-1'
+                                <input id='edit-activity-class-type-1'
                                        name='activity-class'
                                        type='radio'
                                        value='professional'
                                        checked />
-                                <label for='activity-class-type-1' class='radio-label'>professional</label>
+                                <label for='edit-activity-class-type-1' class='radio-label'>professional</label>
 
-                                <input id='activity-class-type-2'
+                                <input id='edit-activity-class-type-2'
                                        name='activity-class'
                                        type='radio'
                                        value='amateur' />
-                                <label for='activity-class-type-2' class='radio-label'>amateur</label>
+                                <label for='edit-activity-class-type-2' class='radio-label'>amateur</label>
                             </fieldset>
                         </div>
                         <div class="form-row">
                             <fieldset class="legacy-checkbox-fieldset">
                                 <legend>Practied sports</legend>
-                                <label class='checkbox-label' for='running'>
-                                    <input id='running'
+                                <label for='edit-running'>
+                                    <input id='edit-running'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='running'/>
                                     <span>running</span>
                                 </label>
 
-                                <label class='checkbox-label' for='cycling'>
-                                    <input id='cycling'
+                                <label for='edit-cycling'>
+                                    <input id='edit-cycling'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='cycling'/>
                                     <span>cycling</span>
                                 </label>
 
-                                <label class='checkbox-label' for='swimming'>
-                                    <input id='swimming'
+                                <label for='edit-swimming'>
+                                    <input id='edit-swimming'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='swimming'/>
                                     <span>swimming</span>
                                 </label>
 
-                                <label class='checkbox-label' for='walking'>
-                                    <input id='walking'
+                                <label for='edit-walking'>
+                                    <input id='edit-walking'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='walking'/>
                                     <span>walking</span>
                                 </label>
 
-                                <label class='checkbox-label' for='skiing'>
-                                    <input id='skiing'
+                                <label for='edit-skiing'>
+                                    <input id='edit-skiing'
                                         name='practiced-sports'
                                         type='checkbox'
                                         value='skiing'/>
