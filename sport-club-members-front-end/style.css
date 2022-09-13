@@ -66,17 +66,17 @@ body {
     margin-top: 10px;
 }
 
-.form-input-container {
+.form-field-container {
     margin-right: 20px;
 }
 
-.form-input-container label,
-.form-input-container input {
+.form-field-container label,
+.form-field-container input {
     display: block;
 }
 
-.form-input-container > input,
-.form-input-container > select {
+.form-field-container > input,
+.form-field-container > select {
     font-size: 20px;
     height: 32px;
     border: 0;
@@ -143,8 +143,18 @@ fieldset label {
     border-radius: 15px;
 }
 
-.legacy-checkbox-fieldset > label {
-    margin-top: 36px;
+.legacy-checkbox-fieldset > legend {
+    position: absolute;
+    top: 7px;
+    left: 13px;
+}
+
+.checkboxes-container {
+    position: absolute;
+    top: 36px;
+    width: inherit;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .footer {
