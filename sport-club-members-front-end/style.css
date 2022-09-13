@@ -61,7 +61,76 @@ body {
 }
 
 .member-card {
+    position: relative;
 
+    width: 340px;
+    height: 128px;
+
+    background: rgba(86, 92, 78, 0.1);
+    border: 0.5px solid #565C4E;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.member-card > img {
+    width: 67px;
+    height: 64px;
+
+    margin-right: 20px;
+    border-radius: 40px;
+    background-color: #BDBDBD;
+
+    float: left;
+}
+
+.member-card > h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.member-card > p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666363;
+
+    overflow: hidden;
+}
+
+.member-card > button {
+    position: absolute;
+    bottom: 10px;
+
+    width: 80px;
+    height: 23px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.1em;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.member-card > .edit-member-button {
+    right: 115px;
+
+    background-color: #D9D9D9;
+    border: 1px solid #767373;
+
+    color: #666363;
+}
+
+.member-card > .delete-member-button {
+    right: 15px;
+
+    background: #DD5A5A;
+    border: 1px solid #686868;
+
+    color: #FFFFFF;
 }
 
 .actions-panel {
