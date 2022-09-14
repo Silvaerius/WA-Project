@@ -40,6 +40,8 @@ body {
     flex: 1;
 
     max-height: calc(100% - 90px);
+
+    overflow-x: hidden;
 }
 
 .main-feature {
@@ -262,20 +264,17 @@ fieldset label {
     justify-content: flex-start;
 }
 
-.checkboxes-container input {
-    background: #D9D9D9;
-    border: 1px solid #3B95D7;
-
-    margin-left: 32px;
+.checkbox-label {
+    margin-right: 32px;
 }
 
-.checkboxes-container input:first-child {
-    margin-left: 0;
-}
-
-.checkboxes-container label {
+.checkbox-label > span {
     margin-left: 5px;
+    position: relative;
+    top: -2px;
 }
+
+
 
 .form-action-button {
     position: absolute;
@@ -353,5 +352,23 @@ fieldset label {
 }
 
 @media only screen and (max-width: 1024px) {
+    .edit-member-container {
+        display: none;
+    }
 
+    .form-row {
+        flex-wrap: wrap;
+    }
+
+    .legacy-checkbox-fieldset {
+        width: 100%;
+    }
+
+    .checkboxes-container {
+        flex-wrap: wrap;
+    }
+
+    .checkbox-label {
+        margin-right: 14%;
+    }
 }
