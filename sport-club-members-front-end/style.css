@@ -115,9 +115,10 @@ body {
     letter-spacing: 0.1em;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
-.member-card > .edit-member-button {
+.edit-member-button {
     right: 115px;
 
     background-color: #D9D9D9;
@@ -126,13 +127,28 @@ body {
     color: #666363;
 }
 
-.member-card > .delete-member-button {
+.edit-member-button:hover {
+    background-color: #dfdfdf;
+}
+.edit-member-button:active {
+    background-color: #cdcbcb;
+}
+
+.delete-member-button {
     right: 15px;
 
     background: #DD5A5A;
     border: 1px solid #686868;
 
     color: #FFFFFF;
+}
+
+.delete-member-button:hover {
+    background-color: #dd5a5ad7;
+}
+
+.delete-member-button:active {
+    background-color: #cb5454;
 }
 
 .actions-panel {
@@ -329,10 +345,6 @@ fieldset label {
     cursor: pointer;
 }
 
-.footer-menu-item:first-child {
-    margin-left: 10px;
-}
-
 .footer-menu-item:hover {
     border-bottom: 1px solid #FFFFFF;
 }
@@ -349,11 +361,23 @@ fieldset label {
     .footer {
         margin-top: 10px;
     }
+
+    .footer-menu-item:first-child {
+        margin-left: 10px;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
     .edit-member-container {
         display: none;
+    }
+
+    .action-container {
+        padding-bottom: 105px;
+    }
+
+    .form-action-button {
+        bottom: 40px;
     }
 
     .form-row {
@@ -370,5 +394,14 @@ fieldset label {
 
     .checkbox-label {
         margin-right: 14%;
+    }
+
+    .footer-menu {
+        flex-wrap: wrap;
+    }
+
+    .footer-menu-item {
+        margin-left: 4%;
+        width: 45%;
     }
 }
