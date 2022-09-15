@@ -5,6 +5,8 @@ const membersSidebar = document.querySelector('#members-sidebar');
 const confirmationOverlay = document.querySelector('#confirmation-overlay');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
+const addMemberForm = document.querySelector('#add-member-form');
+const editMemberForm = document.querySelector('#edit-member-form');
 
 const userIdDataAttribute = 'data-user-id';
 
@@ -77,6 +79,11 @@ function closeDeleteConfirmationDialogue() {
     confirmationOverlay.style.display = 'none';
 }
 
+function addMember(newMember) {
+    const postUserUrl = `${API_ORIGIN}/users`;
+    return axios.post(postUserUrl, newMember);
+}
+
 confirmDeleteButton.addEventListener('click', async function (event) {
     const userId = event.target.dataset.userId;
     await deleteMember(userId);
@@ -98,4 +105,28 @@ membersSidebar.addEventListener('click', function (event) {
             showDeleteConfirmationDialogue(userId);
         }
     }
+});
+
+addMemberForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(addMemberForm);
+
+    const newMember = {
+        "firstName": formData.get('first-name'),
+        "lastName": formData.get('last-name'),
+        "address": {
+            "streetAndNumber": formData.get('address'),
+            "postalCode": formData.get('zip-code'),
+            "city": formData.get('city'),
+            "country": formData.get('country')
+        },
+        "sports": formData.getAll('practiced-sports'),
+        "gender": formData.get('gender'),
+        "age": formData.get('age'),
+        "activity_class": formData.get('activity-class')
+    };
+
+    await addMember(newMember);
+    loadMembers();
 });

@@ -93,6 +93,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: #000000;
+    text-transform: capitalize;
 }
 
 .member-card > p {
