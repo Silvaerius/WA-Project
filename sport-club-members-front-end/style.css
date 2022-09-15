@@ -35,6 +35,7 @@ body {
 
 .features {
     display: flex;
+    position: relative;
 
     margin-top: 5px;
     flex: 1;
@@ -348,6 +349,105 @@ fieldset label {
 
 .footer-menu-item:hover {
     border-bottom: 1px solid #FFFFFF;
+}
+
+.confirmation-overlay {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.delete-confirmation-dialogue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 440px;
+    height: 225px;
+
+    background-color: #D9D9D9;
+    border: 1px solid #3B95D7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.delete-confirmation-dialogue > h3 {
+    height: 42px;
+
+    background-color: #3B95D7;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 42px;
+    color: #FFFFFF;
+
+    padding-left: 20px;
+}
+
+.delete-confirmation-dialogue > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+
+    text-align: center;
+    width: 90%;
+}
+
+.confirmation-button {
+    position: absolute;
+    bottom: 20px;
+
+    width: 110px;
+    height: 30px;
+
+    border: 1px solid #686868;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.cancel-delete-button {
+    right: 135px;
+    background-color: #DD482D;
+}
+
+.cancel-delete-button:hover {
+    background-color: #dd472dde;
+}
+
+.cancel-delete-button:active {
+    background-color: #ce432a;
+}
+
+.confirm-delete-button {
+    right: 15px;
+    background-color: #3B95D7;
+}
+
+.confirm-delete-button:hover {
+    background-color: #3b96d7ea;
+}
+
+.confirm-delete-button:active {
+    background-color: #3589c5;
 }
 
 @media only screen and (min-width: 1024px) {

@@ -14,7 +14,7 @@
     </header>
 
     <div class="features">
-        <div class="members-sidebar">
+        <div id="members-sidebar" class="members-sidebar">
         </div>
         <div class="main-feature">
             <div class="actions-panel">
@@ -22,7 +22,7 @@
                     <header class="form-header">
                         <h2>Add new member</h2>
                     </header>
-                    <form class="member-action-form">
+                    <form id="add-member-form" class="member-action-form">
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='add-first-name'>First name</label>
@@ -134,7 +134,7 @@
                     <header class="form-header">
                         <h2>Edit member</h2>
                     </header>
-                    <form class="member-action-form">
+                    <form id="edit-member-form" class="member-action-form">
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='edit-first-name'>First name</label>
@@ -250,6 +250,14 @@
                     <li class="footer-menu-item">Services</li>
                     <li class="footer-menu-item">Contact us</li>
                 </ul>
+            </div>
+        </div>
+        <div id="confirmation-overlay" class="confirmation-overlay">
+            <div class="delete-confirmation-dialogue">
+                <h3>Delete member</h3>
+                <p>Are you sure you want to delete member: John Doe Samuel? </p>
+                <button id="cancel-delete-button" class="confirmation-button cancel-delete-button">No</button>
+                <button id="confirm-delete-button" class="confirmation-button confirm-delete-button">Yes</button>
             </div>
         </div>
     </div>
