@@ -8,6 +8,8 @@ const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const addMemberForm = document.querySelector('#add-member-form');
 const editMemberForm = document.querySelector('#edit-member-form');
 const cancelEditButton = document.querySelector('#cancel-edit-button');
+const addMemberContainer = document.querySelector('#add-member-container');
+const editMemberContainer = document.querySelector('#edit-member-container');
 
 const userIdDataAttribute = 'data-user-id';
 
@@ -154,6 +156,14 @@ membersSidebar.addEventListener('click', async function (event) {
             editMemberForm.removeAttribute(userIdDataAttribute);
             await fillUserEditForm(userId);
             editMemberForm.setAttribute(userIdDataAttribute, userId);
+            if (window.matchMedia('(max-width: 1024px)').matches) {
+                addMemberForm.reset();
+                addMemberContainer.style.display = 'none';
+                editMemberContainer.style.display = 'block';
+            } else {
+                addMemberContainer.style.display = 'block';
+                editMemberContainer.style.display = 'block';
+            }
         }
         if (event.target.className == 'delete-member-button') {
             showDeleteConfirmationDialogue(userId);
@@ -175,6 +185,10 @@ editMemberForm.addEventListener('submit', async function (event) {
         editMemberForm.reset();
         editMemberForm.removeAttribute(userIdDataAttribute);
         loadMembers();
+        if (window.matchMedia('(max-width: 1024px)').matches) {
+            editMemberContainer.style.display = 'none';
+            addMemberContainer.style.display = 'block';
+        }
     } else {
 
     }
@@ -182,4 +196,8 @@ editMemberForm.addEventListener('submit', async function (event) {
 
 cancelEditButton.addEventListener('click', function () {
     editMemberForm.removeAttribute(userIdDataAttribute);
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+        editMemberContainer.style.display = 'none';
+        addMemberContainer.style.display = 'block';
+    }
 });
