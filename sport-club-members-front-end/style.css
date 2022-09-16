@@ -210,11 +210,23 @@ body {
 }
 
 .medium-input-width {
-    width: 200px;
+    width: 210px;
 }
 
 .bigger-input-width {
     width: 380px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 label,
@@ -309,7 +321,6 @@ fieldset label {
 
     font-weight: 600;
     font-size: 14px;
-    line-height: 21px;
     letter-spacing: 0.1em;
     color: #FFFFFF;
     
@@ -322,6 +333,10 @@ fieldset label {
 
 .form-action-button:active {
     background-color: #3488c4;
+}
+
+.form-cancel-button {
+    right: 210px;
 }
 
 .footer {

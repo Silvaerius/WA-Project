@@ -22,39 +22,40 @@
                     <header class="form-header">
                         <h2>Add new member</h2>
                     </header>
-                    <form id="add-member-form" class="member-action-form">
+                    <form id="add-member-form" class="member-action-form" method="post">
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='add-first-name'>First name</label>
-                                <input id='add-first-name' name='first-name' type='text' class="medium-input-width"/>
+                                <input id='add-first-name' class="medium-input-width" name='first-name' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='add-last-name'>Last name</label>
-                                <input id='add-last-name' name='last-name' type='text' class="medium-input-width"/>
+                                <input id='add-last-name' class="medium-input-width" name='last-name' type='text' required/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='add-address'>Address</label>
-                                <input id='add-address' name='address' type='text' class="bigger-input-width"/>
+                                <input id='add-address' class="bigger-input-width" name='address' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='add-zip-code'>Zip code</label>
-                                <input id='add-zip-code' name='zip-code' type='text' class="smaller-input-width"/>
+                                <input id='add-zip-code' class="smaller-input-width" name='zip-code' type='number' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='add-city'>City</label>
-                                <input id='add-city' name='city' type='text' class="medium-input-width"/>
+                                <input id='add-city' class="medium-input-width" name='city' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='add-country'>Country</label>
-                                <input id='add-country' name='country' type='text' class="medium-input-width"/>
+                                <input id='add-country' class="medium-input-width" name='country' type='text' required/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='add-gender'>Gender</label>
-                                <select id='add-gender' name='gender' class="medium-input-width">
+                                <select id='add-gender' class="medium-input-width" name='gender' required>
+                                    <option hidden disabled selected value>-- select an option --</option>
                                     <option value='female'>female</option>
                                     <option value='male'>male</option>
                                     <option value='not-spec'>not specified</option>
@@ -62,7 +63,7 @@
                             </div>
                             <div class="form-field-container">
                                 <label for='add-age'>Age</label>
-                                <input id='add-age' name='age' type='text' class="smaller-input-width"/>
+                                <input id='add-age' class="smaller-input-width" name='age' type='number' required/>
                             </div>
 
                             <fieldset class="legacy-radio-fieldset">
@@ -134,39 +135,40 @@
                     <header class="form-header">
                         <h2>Edit member</h2>
                     </header>
-                    <form id="edit-member-form" class="member-action-form">
+                    <form id="edit-member-form" class="member-action-form" method="post" data-user-id="test">
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='edit-first-name'>First name</label>
-                                <input id='edit-first-name' name='first-name' type='text' class="medium-input-width"/>
+                                <input id='edit-first-name' class="medium-input-width" name='first-name' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='edit-last-name'>Last name</label>
-                                <input id='edit-last-name' name='last-name' type='text' class="medium-input-width"/>
+                                <input id='edit-last-name' class="medium-input-width" name='last-name' type='text' required/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='edit-address'>Address</label>
-                                <input id='edit-address' name='address' type='text' class="bigger-input-width"/>
+                                <input id='edit-address' class="bigger-input-width" name='address' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='edit-zip-code'>Zip code</label>
-                                <input id='edit-zip-code' name='zip-code' type='text' class="smaller-input-width"/>
+                                <input id='edit-zip-code' class="smaller-input-width" name='zip-code' type='number' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='edit-city'>City</label>
-                                <input id='edit-city' name='city' type='text' class="medium-input-width"/>
+                                <input id='edit-city' class="medium-input-width" name='city' type='text' required/>
                             </div>
                             <div class="form-field-container">
                                 <label for='edit-country'>Country</label>
-                                <input id='edit-country' name='country' type='text' class="medium-input-width"/>
+                                <input id='edit-country' class="medium-input-width" name='country' type='text' required/>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-field-container">
                                 <label for='edit-gender'>Gender</label>
-                                <select id='edit-gender' name='gender' class="medium-input-width">
+                                <select id='edit-gender' class="medium-input-width" name='gender' required>
+                                    <option hidden disabled selected value>-- select an option --</option>
                                     <option value='female'>female</option>
                                     <option value='male'>male</option>
                                     <option value='not-spec'>not specified</option>
@@ -174,7 +176,7 @@
                             </div>
                             <div class="form-field-container">
                                 <label for='edit-age'>Age</label>
-                                <input id='edit-age' name='age' type='text' class="smaller-input-width"/>
+                                <input id='edit-age' class="smaller-input-width" name='age' type='number' required/>
                             </div>
 
                             <fieldset class="legacy-radio-fieldset">
@@ -239,7 +241,8 @@
                                 </div>
                             </fieldset>
                         </div>
-                        <button class="form-action-button">Update</button>
+                        <button id="edit-button" class="form-action-button">Update</button>
+                        <input id="cancel-edit-button" class="form-action-button form-cancel-button" type="reset" value="Cancel">
                     </form>
                 </div>
             </div>

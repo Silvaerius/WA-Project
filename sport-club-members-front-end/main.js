@@ -7,6 +7,7 @@ const confirmDeleteButton = document.querySelector('#confirm-delete-button');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
 const addMemberForm = document.querySelector('#add-member-form');
 const editMemberForm = document.querySelector('#edit-member-form');
+const cancelEditButton = document.querySelector('#cancel-edit-button');
 
 const userIdDataAttribute = 'data-user-id';
 
@@ -84,33 +85,8 @@ function addMember(newMember) {
     return axios.post(postUserUrl, newMember);
 }
 
-confirmDeleteButton.addEventListener('click', async function (event) {
-    const userId = event.target.dataset.userId;
-    await deleteMember(userId);
-    loadMembers();
-    closeDeleteConfirmationDialogue();
-});
-
-cancelDeleteButton.addEventListener('click', function (event) {
-    closeDeleteConfirmationDialogue();
-});
-
-membersSidebar.addEventListener('click', function (event) {
-    if (event.target.nodeName === 'BUTTON') {
-        const userId = event.target.dataset.userId;
-        if (event.target.className == 'edit-member-button') {
-            // to do
-        }
-        if (event.target.className == 'delete-member-button') {
-            showDeleteConfirmationDialogue(userId);
-        }
-    }
-});
-
-addMemberForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    const formData = new FormData(addMemberForm);
+function getMemberData(form) {
+    const formData = new FormData(form);
 
     const newMember = {
         "firstName": formData.get('first-name'),
@@ -127,6 +103,83 @@ addMemberForm.addEventListener('submit', async function (event) {
         "activity_class": formData.get('activity-class')
     };
 
-    await addMember(newMember);
+    return newMember;
+}
+
+function fillUserEditForm(userId) {
+    const getUserUrl = `${API_ORIGIN}/users/${userId}`;
+    return axios.get(getUserUrl)
+        .then(function (response) {
+            const memberData = response.data;
+            editMemberForm.reset();
+            editMemberForm.elements['first-name'].value = memberData.firstName;
+            editMemberForm.elements['last-name'].value = memberData.lastName;
+            editMemberForm.elements['address'].value = memberData.address.streetAndNumber;
+            editMemberForm.elements['zip-code'].value = memberData.address.postalCode;
+            editMemberForm.elements['city'].value = memberData.address.city;
+            editMemberForm.elements['country'].value = memberData.address.country;
+            editMemberForm.elements['gender'].value = memberData.gender;
+            editMemberForm.elements['age'].value = memberData.age;
+            editMemberForm.elements['activity-class'].value = memberData.activity_class;
+            memberData.sports.forEach(sport => {
+                editMemberForm.elements[`edit-${sport}`].checked = true;
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+function editMember(userId, newUserData) {
+    const editUserUrl = `${API_ORIGIN}/users/${userId}`;
+    newUserData['id'] = userId;
+    return axios.put(editUserUrl, newUserData);
+}
+
+confirmDeleteButton.addEventListener('click', async function (event) {
+    const userId = event.target.dataset.userId;
+    await deleteMember(userId);
     loadMembers();
+    closeDeleteConfirmationDialogue();
+});
+
+cancelDeleteButton.addEventListener('click', function (event) {
+    closeDeleteConfirmationDialogue();
+});
+
+membersSidebar.addEventListener('click', async function (event) {
+    if (event.target.nodeName === 'BUTTON') {
+        const userId = event.target.dataset.userId;
+        if (event.target.className == 'edit-member-button') {
+            editMemberForm.removeAttribute(userIdDataAttribute);
+            await fillUserEditForm(userId);
+            editMemberForm.setAttribute(userIdDataAttribute, userId);
+        }
+        if (event.target.className == 'delete-member-button') {
+            showDeleteConfirmationDialogue(userId);
+        }
+    }
+});
+
+addMemberForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    await addMember(getMemberData(addMemberForm));
+    loadMembers();
+});
+
+editMemberForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    if (event.target.hasAttribute(userIdDataAttribute)) {
+        await editMember(event.target.dataset.userId, getMemberData(editMemberForm));
+        editMemberForm.reset();
+        editMemberForm.removeAttribute(userIdDataAttribute);
+        loadMembers();
+    } else {
+
+    }
+});
+
+cancelEditButton.addEventListener('click', function () {
+    editMemberForm.removeAttribute(userIdDataAttribute);
 });
