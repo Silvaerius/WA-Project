@@ -2,14 +2,23 @@ const USER_ICON_PATH = 'img/user-icon.svg';
 const API_ORIGIN = 'http://127.0.0.1:3000'
 
 const membersSidebar = document.querySelector('#members-sidebar');
+
+const addMemberForm = document.querySelector('#add-member-form');
+const editMemberForm = document.querySelector('#edit-member-form');
+
 const confirmationOverlay = document.querySelector('#confirmation-overlay');
 const confirmDeleteButton = document.querySelector('#confirm-delete-button');
 const cancelDeleteButton = document.querySelector('#cancel-delete-button');
-const addMemberForm = document.querySelector('#add-member-form');
-const editMemberForm = document.querySelector('#edit-member-form');
+
 const cancelEditButton = document.querySelector('#cancel-edit-button');
+
 const addMemberContainer = document.querySelector('#add-member-container');
 const editMemberContainer = document.querySelector('#edit-member-container');
+
+const userSaveSuccessToast = document.querySelector('#user-save-success-toast');
+const userSaveFailedToast = document.querySelector('#user-save-failed-toast');
+const userUpdateSuccessToast = document.querySelector('#user-update-success-toast');
+const userUpdateFailedToast = document.querySelector('#user-update-failed-toast');
 
 const userIdDataAttribute = 'data-user-id';
 
@@ -138,6 +147,13 @@ function editMember(userId, newUserData) {
     return axios.put(editUserUrl, newUserData);
 }
 
+function popToastMessage(toast) {
+    toast.style.display = 'block';
+    toast.style.animation = 'none';
+    toast.offsetHeight;
+    toast.style.animation = null;
+}
+
 confirmDeleteButton.addEventListener('click', async function (event) {
     const userId = event.target.dataset.userId;
     await deleteMember(userId);
@@ -176,6 +192,7 @@ addMemberForm.addEventListener('submit', async function (event) {
 
     await addMember(getMemberData(addMemberForm));
     loadMembers();
+    popToastMessage(userSaveSuccessToast);
 });
 
 editMemberForm.addEventListener('submit', async function (event) {
@@ -185,12 +202,13 @@ editMemberForm.addEventListener('submit', async function (event) {
         editMemberForm.reset();
         editMemberForm.removeAttribute(userIdDataAttribute);
         loadMembers();
+        popToastMessage(userUpdateSuccessToast);
         if (window.matchMedia('(max-width: 1024px)').matches) {
             editMemberContainer.style.display = 'none';
             addMemberContainer.style.display = 'block';
         }
     } else {
-
+        popToastMessage(userUpdateFailedToast);
     }
 });
 
