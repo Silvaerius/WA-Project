@@ -192,6 +192,7 @@ addMemberForm.addEventListener('submit', async function (event) {
 
     await addMember(getMemberData(addMemberForm));
     loadMembers();
+    addMemberForm.reset();
     popToastMessage(userSaveSuccessToast);
 });
 
